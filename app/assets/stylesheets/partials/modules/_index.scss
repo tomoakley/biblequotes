@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Index
+   ========================================================================== */
+
+.main-quote {
+    margin-bottom: 20px;
+    .quote-text {
+        font-size: 30px;
+        font-size: 3rem;
+    }
+    .quote-ref {
+        font-weight: bold;
+        font-size: 20px;
+        font-size: 2rem;
+        font-family: adelle, Georgia, serif;
+        color: #ccc;
+        display: block;
+        text-align: right;
+    }
+}

@@ -1,0 +1,10 @@
+<div class="main-quote">
+    <span class="quote-text"><%= @quote.text %></span>
+    <span class="quote-ref"><%= @quote.title %></span>
+    <%= link_to 'Show', quote_path(@quote), {class: "fa fa-link permalink-btn"} %>
+    <%= link_to 'Edit', edit_quote_path(@quote), {class: "fa fa-edit edit-btn"} %>
+    <%= link_to 'Delete', quote_path(@quote),
+        method: :delete,
+        data: { confirm: 'Are you sure?' },
+        class: "fa fa-trash delete-btn" %>
+</div>

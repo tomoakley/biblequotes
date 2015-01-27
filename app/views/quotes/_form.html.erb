@@ -1,0 +1,23 @@
+<%= form_for @quote do |f| %>
+ 
+  <% if @quote.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@quote.errors.count, "error") %> prohibited
+        this quote from being saved:
+      </h2>
+      <ul>
+        <% @quote.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <%= f.text_area :text, placeholder: "Enter the quote or verse text" %>
+
+  <%= f.text_field :title, placeholder: "Enter the Bible reference/author" %>
+ 
+  <%= f.submit class: "quote-submit" %>
+ 
+<% end %>

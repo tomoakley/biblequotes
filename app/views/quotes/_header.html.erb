@@ -1,0 +1,26 @@
+<header class="site-header l-constrained">
+    <a href="/" class="site-branding">
+        <%= image_tag "logo.png", class: "site-logo" %>
+        <span class="site-title">BibleQuot.es</span>
+    </a>
+    <ul class="nav-bar">
+        <li><%= link_to 'New Quote', new_quote_path, {class: "fa fa-edit new-btn"} %></li>
+        <li><a href="#" class="fa fa-rotate-right next-btn">Refresh</a></li>
+        <li class="side-menu-container">
+            <a href="#" class="fa fa-ellipsis-v menu-btn">Menu</a>
+            <ul class="side-menu">
+                <li class="hover-black"><a href="/about">About</a></li>
+                <li class="hover-black"><a href="/contact">Contact</a></li>
+                <li>
+                    <a href="http://twitter.com/biblequot_es" title="Twitter" class="fa menu-social fa-twitter">Twitter</a>
+                </li>
+                <li>
+                    <a href="http://github.com/tomoakley/biblequotes" title="Github" class="fa menu-social fa-github">Github</a>
+                </li>
+                <li class="devlog-opt"><small>Version 0.1</small></li>
+            </ul>
+        </li>
+    </ul>
+</header>
+
+<div class="site-content l-constrained">

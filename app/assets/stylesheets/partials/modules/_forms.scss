@@ -1,0 +1,45 @@
+.new_quote,
+.edit_quote {
+    margin-bottom: 20px;
+    input[type=text],
+    textarea {
+        border: #ccc dashed thin;
+        outline: none;
+        padding: 5px;
+        transition: all 0.2s ease;
+        &:focus {
+            border-color: #D0021B;
+        }
+    }
+}
+
+[id=quote_text] {
+    font-size: 2.2rem;
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+[id=quote_title] {
+    float: right;
+    color: #ccc;
+    font-family: adelle, Georgia, serif;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: right;
+}
+
+.quote-submit {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #444;
+    border: 0;
+    color: #fff;
+    padding: 7px;
+    font-family: adelle, Georgia, serif;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    &:hover {
+        background: #D0021B;
+    }
+}

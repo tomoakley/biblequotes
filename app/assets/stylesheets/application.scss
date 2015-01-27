@@ -1,0 +1,28 @@
+// Reset, Variables, Mixins, Etc
+// DO NOT EDIT ORDER OF FILES
+@import "partials/mixins";
+@import "partials/variables";
+@import "partials/normalize";
+
+// icons
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Globals
+@import "partials/h5bp-global";
+@import "partials/general";
+@import "partials/grid";
+@import "partials/icons";
+
+// Layout
+@import "partials/layout";
+@import "partials/modules/header";
+@import "partials/modules/footer";
+
+// Helper Classes, Print, Etc
+@import "partials/helpers";
+@import "partials/print";
+
+// Page content
+@import "partials/modules/index";
+@import "partials/modules/forms";

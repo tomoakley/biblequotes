@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+html {
+    padding: 20px 0;
+}
+
+.l-constrained {
+	max-width: $pageWidth;
+	margin: 0 auto;
+}
+
+.site-content {
+    margin: 0 auto;
+    width: 65%;
+}
+
+.site-footer {
+	clear: both;
+	width: 100%;
+}

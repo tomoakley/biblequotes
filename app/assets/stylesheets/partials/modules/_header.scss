@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.site-branding {
+    float: left;
+    width: 20%;
+    text-decoration: none;
+    .site-logo {
+        display: inline-block;
+        width: 25%;
+    }
+    .site-title {
+        display: inline-block;
+        color: #444;
+        font-weight: bold;
+        font-size: 20px;
+        font-size: 2rem;
+        margin-left: 5px;
+    }
+}
+
+ .nav-bar {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    > li {
+        float: left;
+    }
+}
+
+.side-menu-container {
+    &.is-active {
+        .menu-btn {
+            background: #444;
+            color: white;
+            border-radius: 5px 5px 0 0;
+        }
+        > .side-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    .side-menu {
+        visibility: hidden;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: solid thin #ccc;
+        border-radius: 0 5px 5px 5px;
+        transition: 0.2s ease all;
+        li {
+            border: solid #ccc;
+            border-width: 0 0 1px 0;
+            cursor: pointer;
+            font-size: 14px;
+            font-size: 1.4rem;
+            transition: all 0.2s ease;
+            &:last-child {
+                border-bottom-width: 0;
+            }
+            &.hover-black:hover {
+                background: #444;
+                > a {
+                    color: white;
+                }
+            }
+        }
+        a {
+            color: #444;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 15px;
+            display: block;
+            transition: all 0.2s ease;
+        }
+        .menu-social {
+            color: white;
+            &.fa-twitter {
+                background: #55acee;
+                &:hover {
+                    color: #55acee;
+                    background: white;
+                }
+            }
+            &.fa-github {
+                background: #4183c4;
+                &:hover {
+                    color: #4183c4;
+                    background: white;
+                }
+            }
+            &:before {
+                margin-right: 5px;
+            }
+        }
+        .devlog-opt {
+            text-align: center;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.site-description {
+}
+
+.site-title {
+}
