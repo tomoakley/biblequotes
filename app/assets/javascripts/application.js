@@ -13,10 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require menu
+//= require navbar
 //= require_tree .
-
-$(".next-btn").on("click", function(e) {
-    e.preventDefault();
-    $(".main-quote").load("/quotes .main-quote");
-});
