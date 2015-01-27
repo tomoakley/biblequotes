@@ -16,9 +16,7 @@
 //= require menu
 //= require_tree .
 
-$(document).ready(function() {
-    $(".next-btn").on("click", function(e) {
-        e.preventDefault();
-        $(".main-quote").load("/quotes .main-quote");
-    });
+$(".next-btn").on("click", function(e) {
+    e.preventDefault();
+    $(".main-quote").load("/quotes .main-quote");
 });
