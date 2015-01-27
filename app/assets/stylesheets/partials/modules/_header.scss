@@ -48,12 +48,10 @@
         margin: 0;
         padding: 0;
         list-style: none;
-        border: solid thin #ccc;
+        border: solid thin #444;
         border-radius: 0 5px 5px 5px;
         transition: 0.2s ease all;
         li {
-            border: solid #ccc;
-            border-width: 0 0 1px 0;
             cursor: pointer;
             font-size: 14px;
             font-size: 1.4rem;
