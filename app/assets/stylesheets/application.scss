@@ -18,6 +18,7 @@
 @import "partials/layout";
 @import "partials/modules/header";
 @import "partials/modules/footer";
+@import "partials/modules/mobile";
 
 // Helper Classes, Print, Etc
 @import "partials/helpers";
@@ -26,3 +27,4 @@
 // Page content
 @import "partials/modules/index";
 @import "partials/modules/forms";
+@import "partials/modules/users";

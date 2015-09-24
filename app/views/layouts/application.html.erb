@@ -2,6 +2,10 @@
 <html>
 <head>
   <title>Biblequotes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <script src="//use.typekit.net/mzp8qbn.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,8 +13,13 @@
 <body>
 
 <%= render 'layouts/header' %>
+<% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
 
 <%= yield %>
+
+</div> <!-- finish .site-content -->
 
 <%= render 'layouts/footer' %>
 

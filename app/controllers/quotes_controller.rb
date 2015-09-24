@@ -1,14 +1,20 @@
 class QuotesController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy, :new, :edit]
     def index
+        @page_title = "Home"
         @quote = Quote.all.sample
     end
 
     def show
         @quote = Quote.find(params[:id])
+        @user = User.find(@quote.user_id)
+        @quote_author = @user.username
+        @quote_created = @quote.created_at.to_formatted_s(:long_ordinal)
     end
     
     def new
-        @quote = Quote.new
+      @page_title = "New Quote"
+      @quote = Quote.new
     end
 
     def edit
@@ -16,9 +22,9 @@ class QuotesController < ApplicationController
     end
 
     def create
-        @quote = Quote.new(quote_params)
+        @quote = current_user.quotes.build(quote_params)
         if @quote.save
-            redirect_to @quote
+            redirect_to root_url
         else
             render 'new'
         end

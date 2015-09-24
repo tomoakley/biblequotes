@@ -1,0 +1,16 @@
+<header class="user-header clearfix">
+  <% if current_user.id == @user.id %>
+    <h2 class="beta">Hi, <%= @user.first_name || @user.username %></h2>
+    <div class="user-options">
+      <a href="/users/edit" class="fa fa-pencil user-edit-btn">Edit profile</a>
+  <% else %>
+    <h2 class="beta"><% has_name %>'s profile</h2>
+    <div class="user-options">
+    <% end %>
+  <a href="#" class="fa fa-plus disabled-btn">Follow <small class="user-msg all-caps">Coming Soon!</small></a>
+  </div>
+</header>
+
+<% if @user.quotes.any? %>
+  <%= render @quotes %>
+<% end %>

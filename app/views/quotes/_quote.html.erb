@@ -1,10 +1,34 @@
 <div class="main-quote">
-    <span class="quote-text"><%= @quote.text %></span>
-    <span class="quote-ref"><%= @quote.title %></span>
-    <%= link_to 'Show', quote_path(@quote), {class: "fa fa-link permalink-btn"} %>
-    <%= link_to 'Edit', edit_quote_path(@quote), {class: "fa fa-edit edit-btn"} %>
-    <%= link_to 'Delete', quote_path(@quote),
+  <span class="quote-text"><%= quote.text %></span>
+  <span class="quote-ref"><%= quote.title %></span>
+  <%= link_to 'Share', "#", {class: "fa fa-share-square-o share-btn"} %>
+  <% if logged_in? %>
+    <% if quote.user_id == current_user.id %>
+      <%= link_to 'Delete', quote_path(quote),
         method: :delete,
         data: { confirm: 'Are you sure?' },
         class: "fa fa-trash delete-btn" %>
+      <%= link_to 'Edit', edit_quote_path(quote), class: "fa fa-edit edit-btn" %>
+    <% end %>
+  <% end %>
+  <div class="quote-meta">
+    <% if @quote_created %>
+      <span class="quote-date fa fa-clock-o">Posted <strong><%= distance_of_time_in_words(@quote_created, Time.now) %></strong> ago by </span>
+    <% end %>
+    <% if @quote_author %>
+      <a class="fa fa-user quote-user-btn" href="/users/<%= @quote_author %>"><%= @quote_author %></a>
+    <% end %>
+  </div>
+</div>
+
+<div class="share-sheet">
+    <a class="quote-url" href="<%= quote_path(quote) %>"><%= quote_path(quote) %></a>
+    <div class="button-list">
+        <a href="#" class="share-button fa fa-facebook-square"><span>Facebook</span></a>
+        <a href="#" class="fa fa-twitter-square share-button"><span>Twitter</span></a>
+        <a href="#" class="fa fa-envelope-square share-button"><span>Email</span></a>
+        <a href="#" class="fa fa-comments share-button button-surround"><span>Message</span></a>
+        <a href="#" class="fa fa-clipboard share-button button-surround"><span>Copy</span></a>
+    </div>
+    <a href="#" class="cancel-button">Cancel</a>
 </div>

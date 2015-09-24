@@ -1,0 +1,43 @@
+/* ----------------------------------
+ * Mobile Design
+ * ---------------------------------- */
+
+.mobile-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    border-bottom: solid thin #ccc;
+    background: white;
+    .mobile-logo {
+        width: 36px;
+        float: left;
+    }
+    .page-title {
+        display: inline-block;
+        margin: 7px 0 0;
+        font-size: 24px;
+    }
+    .mobile-btns {
+        float: right;
+        margin-top: 3px;
+    }
+    .mobile-btn {
+        float: left;
+        text-decoration: none;
+        padding: 7px;
+        color: #444;
+        &:not(:first-child) {
+            margin-left: 5px;
+        }
+        .fa {
+            display: block;
+            font-size: 30px;
+            font-size: 3rem;
+        }
+        &.active {
+            color:#D50021;
+        }
+    }
+}

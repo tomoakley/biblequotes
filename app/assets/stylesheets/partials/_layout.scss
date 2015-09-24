@@ -9,10 +9,11 @@ html {
 .l-constrained {
 	max-width: $pageWidth;
 	margin: 0 auto;
+    padding: 0 5%;
 }
 
 .site-content {
-    margin: 0 auto;
+    margin: 100px auto 0;
     max-width: 800px;
 }
 

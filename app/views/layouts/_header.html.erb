@@ -1,26 +1,34 @@
-<header class="site-header l-constrained">
+<header class="site-header">
+  <div class="l-constrained">
     <a href="/" class="site-branding">
-        <%= image_tag "logo.png", class: "site-logo" %>
-        <span class="site-title">BibleQuot.es</span>
+      <%= image_tag "logo.png", class: "site-logo" %>
+      <span class="site-title link-label">BibleQuotes</span>
     </a>
-    <ul class="nav-bar">
-        <li><%= link_to 'New Quote', new_quote_path, {class: "fa fa-edit new-btn"} %></li>
-        <li><a href="#" class="fa fa-rotate-right next-btn">Refresh</a></li>
-        <li class="side-menu-container">
-            <a href="#" class="fa fa-ellipsis-v menu-btn">Menu</a>
-            <ul class="side-menu">
-                <li class="hover-black"><a href="/about">About</a></li>
-                <li class="hover-black"><a href="/donate">Donate</a></li>
-                <li>
-                    <a href="http://twitter.com/biblequot_es" title="Twitter" class="fa menu-social fa-twitter">Twitter</a>
-                </li>
-                <li>
-                    <a href="http://github.com/tomoakley/biblequotes" title="Github" class="fa menu-social fa-github">Github</a>
-                </li>
-                <li class="devlog-opt"><a href="/development"><small>Version 0.1</small></a></li>
-            </ul>
+    <h1 class="page-title"><%= @page_title %></h1>
+    <ul class="navbar-btns">
+      <% if logged_in? %>
+        <li>
+          <%= active_link_to new_quote_path, {class: "nav-btn"} do %>
+            <i class="fa fa-edit"></i>
+            <span class="link-label">New Quote</span>
+          <% end %>
         </li>
+        <li class="dropdown-container">
+          <a href="#" class="nav-btn">
+            <i class="fa fa-user"></i>
+            <span class="link-label"><%= current_user.username %></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= active_link_to "Profile", "/users/" + current_user.username, {class: "fa fa-user"} %></li>
+            <li><a href="/users/edit" class="fa fa-pencil user-edit-btn">Edit profile</a></li>
+            <li><%= link_to "Log out", logout_path, {class: "fa fa-sign-out", method: "delete"}  %></li>
+        </li>
+      <% else %>
+        <li><a href="/login" class="nav-btn"><i class="fa fa-unlock-alt"></i>Login / Signup</a></li>
+      <% end %>
+      <!-- <a href="#" class="fa fa-rotate-right next-btn">Refresh</a> -->
     </ul>
+  </div>
 </header>
 
 <div class="site-content l-constrained">
